@@ -1,0 +1,29 @@
+import html from "html-literal";
+import clinton_16 from "../../assests/images/clinton_16.jpeg";
+
+export default () => html`
+<main id="main">
+<div class="welcome">
+    <h1>
+     Welcome To The Bi-State Disc Golf Group
+    </h1>
+</div>
+
+   <div class="page">
+
+
+ <img class="image" id='imgOne' src="${clinton_16}" />
+
+ <div class="content">
+    <img class="image" id='imgTwo' src="${clinton_16}" />
+ <h1 class="mission">
+    Our Mission:
+    <br>
+    Is to to....
+     blah blah blah.
+    </h1>
+
+</div>
+ </div>
+
+</main>`;
