@@ -10,7 +10,7 @@ export default () => html`
      Pictures
     </h1>
 </div>
-<div class="page">
+<div>
 
     <div class="content" id="photos">
 
@@ -30,6 +30,7 @@ export default () => html`
             <h2>Tag Wars</h2>
             <img class="pic" src="${clinton_16}" />
         </div>
+
 
    </div>
     </div>
