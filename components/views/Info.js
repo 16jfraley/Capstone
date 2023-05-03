@@ -1,5 +1,5 @@
 import html from "html-literal";
-import putt from "../../assests/images/Putt_image.jpg"
+import putt from "../../assests/images/general/Putt_image.jpg"
 
 export default () => html`
 <main id="main">

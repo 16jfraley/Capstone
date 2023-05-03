@@ -1,5 +1,5 @@
 import html from "html-literal";
-import biState from "../../assests/images/BI_image.jpg"
+import biState from "../../assests/images/general/BI_image.jpg"
 
 export default () => html`
 <main id="main">

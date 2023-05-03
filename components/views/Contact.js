@@ -1,5 +1,5 @@
 import html from "html-literal";
-import clinton from "../../assests/images/Clinton.jpg"
+import clinton from "../../assests/images/general/Clinton.jpg"
 import facebook from "../../assests/images/facebook.jpg"
 import gram from "../../assests/images/instagram.jpg"
 
