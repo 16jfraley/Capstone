@@ -1,7 +1,7 @@
 import html from "html-literal";
 import clinton from "../../assests/images/general/Clinton.jpg"
-import facebook from "../../assests/images/icons/facebook.jpeg"
-import gram from "../../assests/images/icons/instagram.jpeg"
+import facebook from "../../assests/images/icons/facebook.JPEG"
+import gram from "../../assests/images/icons/instagram.JPEG"
 
 export default () => html`
 <main id="main">
