@@ -1,7 +1,5 @@
 import html from "html-literal";
-import clinton from "../../assests/images/general/Clinton.jpg"
-import facebook from "../../assests/images/icons/facebook.jpg"
-import gram from "../../assests/images/icons/instagram.jpg"
+import clinton from "../../assests/images/general/Clinton.jpg
 
 export default () => html`
 <main id="main">
@@ -30,21 +28,6 @@ export default () => html`
 </form>
 </div>
 </div>
-
-
-
-<div class="event" id="social">
-    <h1>
-    Find Us On
-</h1>
-<a href="https://www.facebook.com/groups/313747153988807/">
-<img class='icon' src="${facebook}">
-</a>
-<img class='icon' src='${gram}'>
-<img class='icon' src='${gram}'>
-</div>
-
-
 
 
 
