@@ -1,5 +1,5 @@
 import html from "html-literal";
-import logo from "../assests/images/bi-state-disc-golf-group-ca8a9107efd9.jpg";
+import logo from "../assests/images/logo/bi-state-disc-golf-group-ca8a9107efd9.jpg";
 
 export default (links) => html`
 <footer class="foot">
