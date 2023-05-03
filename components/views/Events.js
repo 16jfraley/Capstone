@@ -1,7 +1,7 @@
 import html from "html-literal";
-import bill from "../../assests/images/Disc_BILL.jpg";
-import chase from "../../assests/images/aceChase.jpg";
-import put from "../../assests/images/puttputt.jpg";
+import bill from "../../assests/images/general/Disc_BILL.jpg";
+import chase from "../../assests/images/flyers/aceChase.jpg";
+import put from "../../assests/images/flyers/puttputt.jpg";
 
 export default () => html`
 <main id="main">

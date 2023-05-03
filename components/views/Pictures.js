@@ -1,7 +1,7 @@
 import html from "html-literal";
-import biState from "../../assests/images/BI_image.jpg";
-import bill from "../../assests/images/Disc_BILL.jpg";
-import clinton_16 from "../../assests/images/clinton_16.jpeg";
+import biState from "../../assests/images/general/BI_image.jpg";
+import bill from "../../assests/images/general/Disc_BILL.jpg";
+import clinton_16 from "../../assests/images/general/clinton_16.jpeg";
 
 export default () => html`
 <main id="main">
