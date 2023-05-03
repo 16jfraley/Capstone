@@ -1,6 +1,6 @@
 import html from "html-literal";
-import biState from "../../assests/images/BI_image.jpg";
-import bill from "../../assests/images/Disc_BILL.jpg";
+import biState from "../../assests/images/BI_image.JPG";
+import bill from "../../assests/images/Disc_BILL.JPG";
 import clinton_16 from "../../assests/images/clinton_16.jpeg";
 
 export default () => html`
@@ -11,7 +11,6 @@ export default () => html`
     </h1>
 </div>
 <div>
-
     <div class="content" id="photos">
 
         <div class="picture">
