@@ -1,5 +1,5 @@
 import html from "html-literal";
-import will from "../../assests/images/Ace/aceWill"
+import will from "../../assests/images/Ace/aceWill.jpeg"
 import chris from "../../assests/images/Ace/aceChris.jpeg"
 import chrisMar5 from "../../assests/images/Ace/aceChrisMar5.jpeg"
 import connorNov6 from "../../assests/images/Ace/aceConnorNov6.jpeg"
