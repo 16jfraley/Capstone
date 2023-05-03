@@ -11,7 +11,7 @@ function render(state = store.Home) {
   ${Header(state)}
   ${Nav(store.Links)}
   ${Main(state)}
-  ${Footer()}`;
+  ${Footer(store.Links)}`;
 
   afterRender(state);
 
@@ -28,6 +28,7 @@ function afterRender(state) {
 }
 
 
+
 router
 .on({
   "/": () => render(),
@@ -41,3 +42,42 @@ router
   },
 })
 .resolve();
+
+
+
+function aceChase () {
+let modal = document.getElementById("aceModal");
+let btn = document.getElementById("aceChase");
+let span = document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+}
+aceChase();
+
+function puttGo (){
+let puttmodal = document.getElementById("puttModal");
+let puttbtn = document.getElementById("puttGo");
+let puttspan = document.getElementsByClassName("puttclose")[0];
+puttbtn.onclick = function() {
+  puttmodal.style.display = "block";
+}
+puttspan.onclick = function() {
+  puttmodal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == puttmodal) {
+    puttmodal.style.display = "none";
+  }
+}
+};
+
+puttGo();

@@ -11,16 +11,15 @@ export default () => html`
 
    <div class="page">
 
-
+<div id="imgTest">
  <img class="image" id='imgOne' src="${clinton_16}" />
-
+</div>
  <div class="content">
     <img class="image" id='imgTwo' src="${clinton_16}" />
  <h1 class="mission">
     Our Mission:
     <br>
     Is to to....
-     blah blah blah.
     </h1>
 
 </div>

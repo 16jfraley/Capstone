@@ -10,7 +10,7 @@ export default () => html`
 <h1>
   The Aces Of BDGG
 </h1>
-<div class="page">
+<div>
 <div class="content" id="ace">
 
 <div class="holeOne">

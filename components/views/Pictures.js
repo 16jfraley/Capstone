@@ -10,7 +10,7 @@ export default () => html`
      Pictures
     </h1>
 </div>
-<div class="page">
+<div>
 
     <div class="content" id="photos">
 
