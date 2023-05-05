@@ -1,11 +1,36 @@
 <! DOCTYPE html>
 <html>
     <head>
+        <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
         <script src="https://kit.fontawesome.com/e3616b364a.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script type="text/javascript">
+          window.onload = function() {
+            L.mapquest.key = 'djRDfMhcreNiHBa7GsJ4rZdmjyYxCpq7';
+
+            const map = L.mapquest.map('map', {
+              center: [38.55253115571871, -89.96358875040441],
+              layers: L.mapquest.tileLayer('map'),
+              zoom: 11
+            });
+
+            map.addControl(L.mapquest.control());
+
+            L.marker([38.55256549075705, -89.96350094114962], {
+          icon: L.mapquest.icons.marker(),
+          draggable: false
+        }).addTo(map);
+          }
+
+
+        </script>
+
+
     </head>
     <body>
 
