@@ -6,3 +6,4 @@ export {default as Projects} from "./Projects";
 export {default as Ace} from "./Ace";
 export {default as Contact} from "./Contact";
 export {default as Conduct} from "./Conduct";
+export {default as Courses} from "./Courses"

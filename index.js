@@ -3,6 +3,7 @@ import * as store from "./store";
 
 import Navigo from "navigo";
 import { capitalize } from "lodash";
+import axios from "axios";
 
 const router = new Navigo("/");
 
@@ -26,6 +27,44 @@ function afterRender(state) {
   document.querySelector("nav > ul").classList.toggle("hidden--mobile");
 });
 }
+
+
+
+router.hooks({
+  before: (done, params) => {
+    const view = params && params.data && params.data.view ? capitalize(params.data.view) : "Courses";
+    // Add a switch case statement to handle multiple routes
+    switch (view) {
+      // New Case for the Home View
+case "Courses":
+  axios
+    // Get request to retrieve the current weather data using the API key and providing a city name
+    .get(
+      `https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js`
+    )
+    .then(response => {
+      // Create an object to be stored in the Home state from the response
+      store.Courses.map = {
+    center: [38.55253115571871, -89.96358875040441],
+    layers: L.mapquest.tileLayer('map'),
+    zoom: 12
+  }});
+
+      };
+
+      done();
+  },
+
+  already: (params) => {
+    const view = params && params.data && params.data.view ? capitalize(params.data.view) : "Home";
+
+    render(store[view]);
+  }
+
+
+
+})
+
 
 
 

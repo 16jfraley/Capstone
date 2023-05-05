@@ -7,4 +7,5 @@ export default [
   { title: "Info", text: "Info" },
   { title: "Contact", text: "Contact" },
   { title: "Conduct", text: "Conduct" },
+  { title: "Courses", text: "Courses" },
 ];
