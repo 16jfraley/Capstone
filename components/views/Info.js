@@ -1,5 +1,6 @@
 import html from "html-literal";
 import putt from "../../assests/images/general/Putt_image.jpg"
+import Conduct from "./Conduct";
 
 export default () => html`
 <main id="main">
@@ -15,7 +16,7 @@ export default () => html`
 
 
     <div class="event" >
-        <a class="info" href="CodeOfConduct.html" >
+        <a class="info" href="${Conduct}" >
             Code of Conduct
     </a>
     </div>

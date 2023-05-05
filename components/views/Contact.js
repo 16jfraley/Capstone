@@ -1,5 +1,5 @@
 import html from "html-literal";
-import clinton from "../../assests/images/general/Clinton.jpg
+import clinton from "../../assests/images/general/Clinton.jpg";
 
 export default () => html`
 <main id="main">
