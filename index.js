@@ -15,10 +15,28 @@ function render(state = store.Home) {
   ${Footer(store.Links)}`;
 
   afterRender(state);
+  map();
 
   router.updatePageLinks();
 }
 
+
+window.onload = function() {
+  L.mapquest.key = 'djRDfMhcreNiHBa7GsJ4rZdmjyYxCpq7';
+
+  const map = L.mapquest.map('map', {
+    center: [38.55253115571871, -89.96358875040441],
+    layers: L.mapquest.tileLayer('map'),
+    zoom: 11
+  });
+
+  map.addControl(L.mapquest.control());
+
+  L.marker([38.55256549075705, -89.96350094114962], {
+icon: L.mapquest.icons.marker(),
+draggable: false
+}).addTo(map);
+}
 
 
 
@@ -27,6 +45,8 @@ function afterRender(state) {
   document.querySelector("nav > ul").classList.toggle("hidden--mobile");
 });
 }
+
+
 
 
 
@@ -68,6 +88,9 @@ case "Courses":
 
 
 
+
+
+
 router
 .on({
   "/": () => render(),
@@ -81,6 +104,9 @@ router
   },
 })
 .resolve();
+
+
+
 
 
 
