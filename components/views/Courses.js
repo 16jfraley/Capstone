@@ -1,7 +1,7 @@
 import html from "html-literal";
 import clinton from "../../assests/images/general/Clinton.jpg";
 
-export default (state) => html`
+export default () => html`
 <main id="main">
 <div class="welcome">
     <h1>
@@ -20,12 +20,11 @@ export default (state) => html`
 </div>
 
 
-  <div id="map" ></></div>
+  <div id="map" ></div>
 </div>
-
-
 
     </div>
 
 </main>
+
 `;
