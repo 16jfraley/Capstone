@@ -23,10 +23,12 @@ header{
 }
 .fa-bars{
     grid-row: 4;
+    margin: 1%;
 }
 nav{
     background-color: rgb(139, 134, 134);
     margin: 0%;
+    z-index: 3;
 }
 .menu{
     background-color: #000;
@@ -54,7 +56,7 @@ ul {
     background-color:rgba(196, 173, 0) ;
     display: flex;
     justify-content: flex-start;
-    align-items:baseline;
+    align-items:center;
     flex-direction: column;
     margin: 0px;
     text-align: center;
@@ -69,7 +71,7 @@ li {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
 }
 .navBar{
     border-radius: 20px;
@@ -78,10 +80,11 @@ li {
     display: inline;
     margin: 0px;
     padding: 15px;
+    padding-left: 2rem;
+    padding-right: 2rem;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    width: 220px;
     color: #ffffff;
     font-family: 'Oswald',sans-serif;
     font-size: 18px;
@@ -90,7 +93,6 @@ li {
 }
 .navBar:hover {
     background-color: rgb(66, 64, 64);
-    width: 9%;
 }
 #main{
     display: block;
@@ -107,7 +109,9 @@ li {
 .fa-bars{
     margin: 1%;
 }
-
+#map{
+    z-index: 1;
+}
 
 @media (min-width:850px) {
     .all{
@@ -118,19 +122,31 @@ li {
         justify-self: center;
         align-self: center;
     }
+    .navBar{
+        padding-left: 3em;
+        padding-right: 3em;
+    }
 
     #imgTest{
+        grid-column: 1 / 2;
         overflow: hidden ;
         width: 100%;
         height: 100%;
     }
     #imgOne{
         display: flex;
+        grid-column: 1 / 2;
+        aspect-ratio: ;
+        overflow: hidden ;
+        height: 100%;
+        background-color: rgb(66, 64, 64);
+
     }
     #imgTwo{
         display: none;
 
     }
+
     .welcome{
         font-size: 22px;
         text-align: center;
@@ -148,24 +164,20 @@ li {
         height: 100%;
 
     }
-
-    .image{
-        overflow:hidden;
-        left: 0px;
-        right: 0px;
-        margin: 0px;
-    }
     #map{
         width: 60%;
         height: 30%;
     }
     .content{
+        overflow-y: scroll;
+        grid-column: 2 /3;
+        grid-row: 1 / 2;
         margin: 0%;
         width:100%;
         background-color: rgb(66, 64, 64);
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: flex-start;
         align-items: center;
 
     }
@@ -173,7 +185,7 @@ li {
         align-self: flex-start;
         background-color: #000;
         color: #ffffff;
-        font-size: 50px;
+        font-size: 2.2rem;
         margin: 0%;
         padding: 0%;
         margin-bottom: 10px;
@@ -246,6 +258,7 @@ li {
         background-color: #d8d8d8;
         color: #000;
         padding: 15px;
+        margin: 5%;
         border: #000;
         border-radius: 10px;
     }
@@ -356,6 +369,10 @@ li {
         padding: 3%;
         background-color: #d8d8d8;
         border-radius: 3%;
+    }
+    .navBar{
+        width: 90%;
+        height: 30%;
     }
 
     .welcome{
@@ -572,10 +589,10 @@ li {
   /* Modal Content/Box */
   .modal-content {
     background-color: #fefefe;
-    margin: 2% auto; /* 15% from the top and centered */
+    margin: 2% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 40%; /* Could be more or less, depending on screen size */
+    width: 40%;
     align-self: centers;
 }
 #flyer{
