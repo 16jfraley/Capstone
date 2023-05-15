@@ -16,15 +16,45 @@ export default () => html`
 <div class="event" id="pizza">
 <h1>Contact us</h1>
 
-<div id="form">
-    <form>
-  <input class='input' type="text" placeholder="Full Name" />
-  <input class='input' type="email" placeholder="E-mail"/>
+<div >
+    <form id="form" method="POST"  action="">
+
+  <div>
+  <input
+      type="text"
+      name="user"
+      id="user"
+      placeholder="Name"
+      required
+    />
+  </div>
+
+  <div>
+  <input
+      type="text"
+      name="email"
+      id="email"
+      placeholder="Email"
+      required
+    />
+  </div>
+
   <label class='input'  for="msg">What would you like to tell us:</label>
-    <textarea class='input' name="msg" id="msg" cols="30" rows="10"></textarea>
+
+  <div>
+  <textarea
+      type="text"
+      name="message"
+      id="message"
+      cols="30"
+      rows="10"
+      required
+    ></textarea>
+  </div>
+
   <input type="checkbox" name="optIn" value="trusting" id="news" checked />
   <label class='input' for="news">Join Our E-mail List</label>
-  <input class='input' id="submit"  type="submit" />
+  <input type="submit" name="submit" value="Submit" />
 </form>
 </div>
 </div>

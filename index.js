@@ -2,10 +2,12 @@ import {Header, Nav, Main, Footer} from "./components";
 import * as store from "./store";
 
 import Navigo from "navigo";
-import { capitalize } from "lodash";
+import { capitalize, startsWith } from "lodash";
 import axios from "axios";
 
 const router = new Navigo("/");
+
+
 
 function render(state = store.Home) {
   document.querySelector('#root').innerHTML = `
@@ -15,38 +17,41 @@ function render(state = store.Home) {
   ${Footer(store.Links)}`;
 
   afterRender(state);
-  map();
+  map;
+  aceChase();
 
   router.updatePageLinks();
 }
-
-
-window.onload = function() {
-  L.mapquest.key = 'djRDfMhcreNiHBa7GsJ4rZdmjyYxCpq7';
-
-  const map = L.mapquest.map('map', {
-    center: [38.55253115571871, -89.96358875040441],
-    layers: L.mapquest.tileLayer('map'),
-    zoom: 11
-  });
-
-  map.addControl(L.mapquest.control());
-
-  L.marker([38.55256549075705, -89.96350094114962], {
-icon: L.mapquest.icons.marker(),
-draggable: false
-}).addTo(map);
-}
-
 
 
 function afterRender(state) {
   document.querySelector(".fa-bars").addEventListener("click", () => {
   document.querySelector("nav > ul").classList.toggle("hidden--mobile");
 });
+
+if (state.view === "Contact") {
+  document.querySelector("form").addEventListener("submit", event => {
+    event.preventDefault();
+
+    const inputList = event.target.elements;
+    console.log("Input Element List", inputList);
+
+
+    const requestData = {
+      user: inputList.user.value,
+      email: inputList.email.value,
+      message: inputList.message.value,
+    };
+    console.log("request Body", requestData);
+
+    axios
+      .post(`${process.env.MONGODB}/Contact`, requestData)
+      .catch(error => {
+        console.log("It puked", error);
+      });
+  });
 }
-
-
+}
 
 
 
@@ -86,11 +91,6 @@ case "Courses":
 })
 
 
-
-
-
-
-
 router
 .on({
   "/": () => render(),
@@ -105,10 +105,22 @@ router
 })
 .resolve();
 
+window.onload = function() {
+  L.mapquest.key = 'djRDfMhcreNiHBa7GsJ4rZdmjyYxCpq7';
 
+  const map = L.mapquest.map('map', {
+    center: [38.55253115571871, -89.96358875040441],
+    layers: L.mapquest.tileLayer('map'),
+    zoom: 11
+  });
 
+  map.addControl(L.mapquest.control());
 
-
+  L.marker([38.55256549075705, -89.96350094114962], {
+icon: L.mapquest.icons.marker(),
+draggable: false
+}).addTo(map);
+}
 
 function aceChase () {
 let modal = document.getElementById("aceModal");
@@ -125,8 +137,11 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
-}
-aceChase();
+};
+
+
+
+
 
 function puttGo (){
 let puttmodal = document.getElementById("puttModal");
