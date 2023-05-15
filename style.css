@@ -571,6 +571,13 @@ li {
 
 }
 
+#aceModal{
+    display: none;
+
+}
+#aceChase:hover{
+    background-color:#ffffff ;
+}
 /* The Modal (background) */
 .modal {
     display: none;
