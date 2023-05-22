@@ -13,13 +13,13 @@ export default () => html`
 <img class="image" id='imgOne' src="${clinton}" />
     <div class="content" id="contact">
 
-<div class="event" id="pizza">
+<div class="event" id="iputform">
 <h1>Contact us</h1>
 
 <div >
     <form id="form" method="POST"  action="">
 
-  <div>
+  <div id="cotainer">
   <input
       type="text"
       name="user"
@@ -52,7 +52,7 @@ export default () => html`
     ></textarea>
   </div>
 
-  <input type="checkbox" name="optIn" value="trusting" id="news" checked />
+  <input type="checkbox" name="optIn" value="trusting" id="emailList" checked />
   <label class='input' for="news">Join Our E-mail List</label>
   <input type="submit" name="submit" value="Submit" />
 </form>

@@ -21,7 +21,7 @@ export default () => html`
     </a>
     </div>
     <div class="event" >
-        <a class="info" href="CodeOfConduct.html" >
+        <a class="info" href="" >
             Bi-Laws
     </a>
     </div>

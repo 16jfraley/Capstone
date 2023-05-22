@@ -9,7 +9,7 @@ const emailSchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
-    validate: /^[A-Za-z0-9 ]*$/
+    validate: /^[A-Za-z0-9@.]*$/
   },
   message: {
     type: String,
