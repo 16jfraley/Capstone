@@ -5,6 +5,6 @@ export default [
   { title: "Ace", text: "Ace" },
   { title: "Courses", text: "Courses" },
   { title: "Pictures", text: "Pictures" },
-  { title: "Info", text: "Info" },
+  // { title: "Info", text: "Info" },
   { title: "Contact", text: "Contact" },
 ];

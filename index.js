@@ -18,7 +18,6 @@ function render(state = store.Home) {
 
   afterRender(state);
   map;
-  aceChase();
 
   router.updatePageLinks();
 }
@@ -45,12 +44,71 @@ if (state.view === "Contact") {
     console.log("request Body", requestData);
 
     axios
-      .post(`${process.env.MONGODB}/Contact`, requestData)
+      .post(`${process.env.Email_API}/emails`, requestData)
       .catch(error => {
         console.log("It puked", error);
       });
   });
 }
+
+function aceChase () {
+  let modal = document.getElementById("aceModal");
+  let btn = document.getElementById("aceChase");
+  let span = document.getElementsByClassName("close")[0];
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+  };
+  aceChase();
+
+  function puttGo (){
+    let puttmodal = document.getElementById("puttModal");
+    let puttbtn = document.getElementById("puttGo");
+    let puttspan = document.getElementsByClassName("puttclose")[0];
+    puttbtn.onclick = function() {
+      puttmodal.style.display = "block";
+    }
+    puttspan.onclick = function() {
+      puttmodal.style.display = "none";
+    }
+    window.onclick = function(event) {
+      if (event.target == puttmodal) {
+        puttmodal.style.display = "none";
+      }
+    }
+    };
+
+    puttGo();
+}
+
+window.onload = function() {
+  L.mapquest.key = 'djRDfMhcreNiHBa7GsJ4rZdmjyYxCpq7';
+
+  const map = L.mapquest.map('map', {
+    center: [38.55253115571871, -89.96358875040441],
+    layers: L.mapquest.tileLayer('map'),
+    zoom: 11
+  });
+
+  map.addControl(L.mapquest.control());
+
+  L.marker([38.55256549075705, -89.96350094114962], {
+icon: L.mapquest.icons.marker(),
+draggable: false
+}).addTo(map);
+
+L.marker([38.51801964170731, -90.01754671904315], {
+  icon: L.mapquest.icons.marker(),
+  draggable: false
+  }).addTo(map);
 }
 
 
@@ -105,59 +163,12 @@ router
 })
 .resolve();
 
-window.onload = function() {
-  L.mapquest.key = 'djRDfMhcreNiHBa7GsJ4rZdmjyYxCpq7';
-
-  const map = L.mapquest.map('map', {
-    center: [38.55253115571871, -89.96358875040441],
-    layers: L.mapquest.tileLayer('map'),
-    zoom: 11
-  });
-
-  map.addControl(L.mapquest.control());
-
-  L.marker([38.55256549075705, -89.96350094114962], {
-icon: L.mapquest.icons.marker(),
-draggable: false
-}).addTo(map);
-}
-
-function aceChase () {
-let modal = document.getElementById("aceModal");
-let btn = document.getElementById("aceChase");
-let span = document.getElementsByClassName("close")[0];
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-span.onclick = function() {
-  modal.style.display = "none";
-}
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-};
 
 
 
 
 
-function puttGo (){
-let puttmodal = document.getElementById("puttModal");
-let puttbtn = document.getElementById("puttGo");
-let puttspan = document.getElementsByClassName("puttclose")[0];
-puttbtn.onclick = function() {
-  puttmodal.style.display = "block";
-}
-puttspan.onclick = function() {
-  puttmodal.style.display = "none";
-}
-window.onclick = function(event) {
-  if (event.target == puttmodal) {
-    puttmodal.style.display = "none";
-  }
-}
-};
 
-puttGo();
+
+
+

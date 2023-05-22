@@ -209,11 +209,11 @@ li {
     #form{
         display: flex;
         flex-direction: column;
-        width: 40%;
+        width: 100%;
         justify-content: center;
         align-items: center;
-        margin: 5%;
     }
+
     .icon{
         width: 10%;
         margin: 3%;
@@ -262,7 +262,7 @@ li {
         border: #000;
         border-radius: 10px;
     }
-    #pizza{
+    #inputform{
         margin: 5%;
         display: flex;
         flex-direction: column;
