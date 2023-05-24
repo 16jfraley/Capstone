@@ -1,6 +1,5 @@
 // 'Import' the http module
 const express = require("express");
-const http = require("http");
 const dotenv = require("dotenv");
 const mongoose = require('mongoose');
 const emails = require("./routers/emails");

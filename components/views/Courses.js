@@ -19,6 +19,12 @@ export default () => html`
 <h3>Swansea, IL</h3>
 </div>
 
+<div class="event">
+<h2>Bicentennial Park</h2>
+<h3>Bellville, IL</h3>
+</div>
+
+
 
   <div id="map" ></div>
 </div>

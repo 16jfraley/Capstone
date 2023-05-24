@@ -54,9 +54,11 @@ export default () => html`
 
   <input type="checkbox" name="optIn" value="trusting" id="emailList" checked />
   <label class='input' for="news">Join Our E-mail List</label>
-  <input type="submit" name="submit" value="Submit" />
+  <input type="submit" name="submit" value="Submit" id='submit' href='http://localhost:1234/Home'/>
 </form>
+
 </div>
+
 </div>
 
 
