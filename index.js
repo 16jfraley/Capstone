@@ -2,7 +2,7 @@ import {Header, Nav, Main, Footer} from "./components";
 import * as store from "./store";
 
 import Navigo from "navigo";
-import { capitalize, startsWith } from "lodash";
+import { capitalize} from "lodash";
 import axios from "axios";
 
 const router = new Navigo("/");
@@ -41,10 +41,12 @@ if (state.view === "Contact") {
       email: inputList.email.value,
       message: inputList.message.value,
     };
+
     console.log("request Body", requestData);
 
     axios
       .post(`${process.env.Email_API}/emails`, requestData)
+      .then(router.navigate("Home"))
       .catch(error => {
         console.log("It puked", error);
       });
@@ -87,6 +89,7 @@ function aceChase () {
     };
 
     puttGo();
+
 }
 
 window.onload = function() {
@@ -101,17 +104,16 @@ window.onload = function() {
   map.addControl(L.mapquest.control());
 
   L.marker([38.55256549075705, -89.96350094114962], {
-icon: L.mapquest.icons.marker(),
+icon: L.mapquest.icons.marker("flag-hello-sm"),
 draggable: false
-}).addTo(map);
+}).bindPopup('Clinton Hills').addTo(map);
 
 L.marker([38.51801964170731, -90.01754671904315], {
   icon: L.mapquest.icons.marker(),
   draggable: false
-  }).addTo(map);
+  }).bindPopup('Bicentennial Park').addTo(map);
+
 }
-
-
 
 router.hooks({
   before: (done, params) => {
