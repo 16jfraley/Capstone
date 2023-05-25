@@ -3,6 +3,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require('mongoose');
 const emails = require("./routers/emails");
+const axios = require("axios");
 
 const app = express();
 dotenv.config();

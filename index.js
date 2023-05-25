@@ -1,13 +1,10 @@
 import {Header, Nav, Main, Footer} from "./components";
 import * as store from "./store";
-
 import Navigo from "navigo";
 import { capitalize} from "lodash";
 import axios from "axios";
 
 const router = new Navigo("/");
-
-
 
 function render(state = store.Home) {
   document.querySelector('#root').innerHTML = `
@@ -17,7 +14,6 @@ function render(state = store.Home) {
   ${Footer(store.Links)}`;
 
   afterRender(state);
-  map;
 
   router.updatePageLinks();
 }
@@ -46,13 +42,12 @@ if (state.view === "Contact") {
 
     axios
       .post(`${process.env.Email_API}/emails`, requestData)
-      .then(router.navigate("Home"))
+      .then(router.navigate("/Home"))
       .catch(error => {
         console.log("It puked", error);
       });
   });
 }
-
 function aceChase () {
   let modal = document.getElementById("aceModal");
   let btn = document.getElementById("aceChase");
@@ -117,26 +112,26 @@ L.marker([38.51801964170731, -90.01754671904315], {
 
 router.hooks({
   before: (done, params) => {
-    const view = params && params.data && params.data.view ? capitalize(params.data.view) : "Courses";
+    const view = params && params.data && params.data.view ? capitalize(params.data.view) : "Home";
     // Add a switch case statement to handle multiple routes
-    switch (view) {
-      // New Case for the Home View
-case "Courses":
-  axios
-    // Get request to retrieve the current weather data using the API key and providing a city name
-    .get(
-      `https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js`
-    )
-    .then(response => {
-      // Create an object to be stored in the Home state from the response
-      store.Courses.map = {
-    center: [38.55253115571871, -89.96358875040441],
-    layers: L.mapquest.tileLayer('map'),
-    zoom: 12
-  }});
+//     switch (view) {
+//       // New Case for the Home View
+// // case "Courses":
+// //   axios
+// //     // Get request to retrieve the current weather data using the API key and providing a city name
+// //     .get(
+// //       `https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js`
+// //     )
+// //     .then(response => {
+// //       // Create an object to be stored in the Home state from the response
+// //       store.Courses.map = {
+// //     center: [38.55253115571871, -89.96358875040441],
+// //     layers: L.mapquest.tileLayer('map'),
+// //     zoom: 12
+// //   }
+// // });
 
-      };
-
+//       };
       done();
   },
 
@@ -148,7 +143,7 @@ case "Courses":
 
 
 
-})
+});
 
 
 router
@@ -156,12 +151,12 @@ router
   "/": () => render(),
   ":view": (params) => {
     let view = capitalize(params.data.view);
-    if (store.hasOwnProperty(view)) {
+    if (view in store) {
       render(store[view]);
     } else {
       console.log(`view ${view} not defined`);
     }
-  },
+  }
 })
 .resolve();
 

@@ -48,8 +48,8 @@ nav{
 }
 ul {
     opacity: 100%;
-    width: 100%;
-    height: 8.5%;
+    width: 12%;
+    height: 50%;
     position: absolute;
     z-index: 2;
     border-radius: 3px;
@@ -57,7 +57,7 @@ ul {
     display: flex;
     justify-content: center;
     align-items:center;
-    flex-direction: row;
+    flex-direction: column;
     margin: 0px;
     text-align: center;
 
