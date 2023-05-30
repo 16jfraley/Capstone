@@ -48,6 +48,7 @@ if (state.view === "Contact") {
       });
   });
 }
+if (state.view === "Events"){
 function aceChase () {
   let modal = document.getElementById("aceModal");
   let btn = document.getElementById("aceChase");
@@ -84,31 +85,36 @@ function aceChase () {
     };
 
     puttGo();
+  }
+
+  if (state.view === "Courses"){
+    window.onload = function() {
+      L.mapquest.key = 'djRDfMhcreNiHBa7GsJ4rZdmjyYxCpq7';
+
+      const map = L.mapquest.map('map', {
+        center: [38.55253115571871, -89.96358875040441],
+        layers: L.mapquest.tileLayer('map'),
+        zoom: 11
+      });
+
+      map.addControl(L.mapquest.control());
+
+      L.marker([38.55256549075705, -89.96350094114962], {
+    icon: L.mapquest.icons.marker("flag-hello-sm"),
+    draggable: false
+    }).bindPopup('Clinton Hills').addTo(map);
+
+    L.marker([38.51801964170731, -90.01754671904315], {
+      icon: L.mapquest.icons.marker(),
+      draggable: false
+      }).bindPopup('Bicentennial Park').addTo(map);
+
+    }
+    }
 
 }
 
-window.onload = function() {
-  L.mapquest.key = 'djRDfMhcreNiHBa7GsJ4rZdmjyYxCpq7';
 
-  const map = L.mapquest.map('map', {
-    center: [38.55253115571871, -89.96358875040441],
-    layers: L.mapquest.tileLayer('map'),
-    zoom: 11
-  });
-
-  map.addControl(L.mapquest.control());
-
-  L.marker([38.55256549075705, -89.96350094114962], {
-icon: L.mapquest.icons.marker("flag-hello-sm"),
-draggable: false
-}).bindPopup('Clinton Hills').addTo(map);
-
-L.marker([38.51801964170731, -90.01754671904315], {
-  icon: L.mapquest.icons.marker(),
-  draggable: false
-  }).bindPopup('Bicentennial Park').addTo(map);
-
-}
 
 router.hooks({
   before: (done, params) => {
