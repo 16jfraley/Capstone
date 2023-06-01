@@ -14,7 +14,6 @@ function render(state = store.Home) {
   ${Footer(store.Links)}`;
 
   afterRender(state);
-
   router.updatePageLinks();
 }
 
@@ -48,6 +47,7 @@ if (state.view === "Contact") {
       });
   });
 }
+
 if (state.view === "Events"){
 function aceChase () {
   let modal = document.getElementById("aceModal");
@@ -88,7 +88,7 @@ function aceChase () {
   }
 
   if (state.view === "Courses"){
-    window.onload = function() {
+
       L.mapquest.key = 'djRDfMhcreNiHBa7GsJ4rZdmjyYxCpq7';
 
       const map = L.mapquest.map('map', {
@@ -109,11 +109,9 @@ function aceChase () {
       draggable: false
       }).bindPopup('Bicentennial Park').addTo(map);
 
-    }
-    }
 
+    }
 }
-
 
 
 router.hooks({
